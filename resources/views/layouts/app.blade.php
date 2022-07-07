@@ -9,6 +9,7 @@
     <!-- ========== All CSS files linkup ========= -->
     <link rel="stylesheet" href="{{ asset('css/lineicons.css') }}"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('styles')
 </head>
 <body>
 <!-- ======== sidebar-nav start =========== -->
@@ -74,5 +75,6 @@
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 {{--<script src="{{ asset('js/app.js') }}"></script>--}}
 <script src="{{ asset('js/main.js') }}"></script>
+@yield('scripts')
 </body>
 </html>
