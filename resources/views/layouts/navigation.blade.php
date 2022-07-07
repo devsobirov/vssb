@@ -19,10 +19,12 @@
             </span>
             <span class="text">Yangiliklar</span>
         </a>
-        <ul id="blog" class="dropdown-nav collapse @if(request()->routeIs('categories.*')) show @endif" style="">
+        <ul id="blog" class="dropdown-nav collapse @if(request()->routeIs('categories.*') || request()->routeIs('posts.*')) show @endif" style="">
             <li>
-                <a href="#">Yangi kiritish</a>
-                <a href="#">Barcha Yangiliklar</a>
+                <a class="@if(request()->routeIs('posts.create')) active @endif"
+                   href="{{ route('posts.create') }}">Yangi kiritish</a>
+                <a class="@if(request()->routeIs('posts.*') && !request()->routeIs('posts.create')) active @endif"
+                   href="{{ route('posts.index') }}">Barcha Yangiliklar</a>
                 <a class="@if(request()->routeIs('categories.*')) active @endif" href="{{ route('categories.index') }}">Kategoriyalar</a>
             </li>
         </ul>

@@ -15,11 +15,21 @@ class Category extends Model
 
     public $translatable = ['name'];
 
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'category_id', 'id');
+    }
+
     public static function getOrCreateCategory($id): Category
     {
         if (!empty($id)) {
             return self::findOrFail($id);
         }
         return new Category();
+    }
+
+    public static function getGlobalCategories()
+    {
+        return self::select(['id', 'name', 'slug', 'location'])->get();
     }
 }

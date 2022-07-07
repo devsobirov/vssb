@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 
 $localizationGroupData = [
     'prefix' => LaravelLocalization::setLocale(),
@@ -29,6 +30,10 @@ Route::prefix('c-panel')->middleware('auth')->group(function () {
         Route::get('form/{id?}', 'form')->name('categories.form');
         Route::post('save/{id?}', 'save')->name('categories.save');
     });
+
+    Route::resource('posts', PostController::class)
+        ->except(['show'])->names('posts');
+
     Route::get('users', [UserController::class, 'index'])->name('users.index');
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
