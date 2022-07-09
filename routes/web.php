@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\UserController;
@@ -33,6 +34,13 @@ Route::prefix('c-panel')->middleware('auth')->group(function () {
 
     Route::resource('posts', PostController::class)
         ->except(['show'])->names('posts');
+
+    Route::controller(PageController::class)->prefix('pages')
+        ->group(function () {
+        Route::get('/', 'index')->name('pages.index');
+        Route::get('form/{id?}', 'form')->name('pages.form');
+        Route::post('save/{id?}', 'save')->name('pages.save');
+    });
 
     Route::get('users', [UserController::class, 'index'])->name('users.index');
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
