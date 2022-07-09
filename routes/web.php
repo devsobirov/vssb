@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PersonController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -40,6 +41,14 @@ Route::prefix('c-panel')->middleware('auth')->group(function () {
         Route::get('/', 'index')->name('pages.index');
         Route::get('form/{id?}', 'form')->name('pages.form');
         Route::post('save/{id?}', 'save')->name('pages.save');
+    });
+
+    Route::controller(PersonController::class)->prefix('person')
+        ->group(function () {
+        Route::get('/', 'index')->name('person.index');
+        Route::get('form/{id?}', 'form')->name('person.form');
+        Route::post('save/{id?}', 'save')->name('person.save');
+        Route::delete('delete/{person}', 'delete')->name('person.delete');
     });
 
     Route::get('users', [UserController::class, 'index'])->name('users.index');
