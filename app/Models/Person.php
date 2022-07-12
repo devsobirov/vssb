@@ -18,6 +18,11 @@ class Person extends Model
 
     public $translatable = ['position', 'info'];
 
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class, 'person_id', 'id');
+    }
+
     public static function getOrCreatePerson($id = null) : Person
     {
         if (!empty($id)) {

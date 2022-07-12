@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\Admin\PersonController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
@@ -49,6 +50,13 @@ Route::prefix('c-panel')->middleware('auth')->group(function () {
         Route::get('form/{id?}', 'form')->name('person.form');
         Route::post('save/{id?}', 'save')->name('person.save');
         Route::delete('delete/{person}', 'delete')->name('person.delete');
+    });
+
+    Route::controller(AppointmentController::class)->prefix('appointments')
+        ->group(function () {
+        Route::get('{person}/{id?}', 'list')->name('appointments.list');
+        Route::post('save/{id?}', 'save')->name('appointments.save');
+        Route::delete('delete/{appointment}', 'delete')->name('appointments.delete');
     });
 
     Route::get('users', [UserController::class, 'index'])->name('users.index');

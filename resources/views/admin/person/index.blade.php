@@ -56,7 +56,14 @@
                                         @endif
                                     @endforeach
                                 </td>
-                                <td></td>
+                                <td>
+                                    @forelse($item->appointments as $a)
+                                        <p><b>{{ $a->weekday }}</b> {{ $a->time }}</p>
+                                    @empty
+                                        <p class="my-1">Mavjud emas</p>
+                                    @endforelse
+                                        <a class="d-inline-block mt-2" href="{{ route('appointments.list', $item->id) }}">Boshqarish</a>
+                                </td>
                                 <td>
                                     <div class="action">
                                         <a href="{{ route('person.form', $item->id) }}" class="text-success mx-2">
