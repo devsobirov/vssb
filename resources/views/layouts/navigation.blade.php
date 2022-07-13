@@ -9,7 +9,7 @@
             <span class="text">{{ __('Bosh panel') }}</span>
         </a>
     </li>
-    <li class="nav-item nav-item-has-children @if(request()->routeIs('admin.posts.*')) active @endif">
+    <li class="nav-item nav-item-has-children @if(request()->routeIs('posts.*')) active @endif">
         <a class="collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#blog"
            aria-controls="blog" aria-expanded="true" aria-label="Toggle navigation">
             <span class="icon">
@@ -39,6 +39,26 @@
             </span>
             <span class="text">{{ __('Sahifalar') }}</span>
         </a>
+    </li>
+    <li class="nav-item nav-item-has-children @if(request()->routeIs('documents.*')) active @endif">
+        <a class="collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#documents"
+           aria-controls="documents" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" style="width: 22px; height: 22px;" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                  <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                  <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+                </svg>
+            </span>
+            <span class="text">Hujjatlar</span>
+        </a>
+        <ul id="documents" class="dropdown-nav collapse @if(request()->routeIs('documents.*')) show @endif" style="">
+            <li>
+                @foreach($g_menuHelper::docCategories() as $id => $name)
+                <a class="@if(request()->routeIs('documents.list') && request()->route()->parameter('category') == $id) active @endif"
+                   href="{{ route('documents.list', $id) }}">{{ ucfirst($name) }}</a>
+                @endforeach
+            </li>
+        </ul>
     </li>
     <li class="nav-item @if(request()->routeIs('person.*')) active @endif">
         <a href="{{ route('person.index') }}">

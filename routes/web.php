@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\DocumentController;
 
 $localizationGroupData = [
     'prefix' => LaravelLocalization::setLocale(),
@@ -59,6 +60,13 @@ Route::prefix('c-panel')->middleware('auth')->group(function () {
         Route::delete('delete/{appointment}', 'delete')->name('appointments.delete');
     });
 
+    Route::controller(DocumentController::class)->prefix('documents')
+        ->group(function () {
+        Route::get('list/{category}', 'list')->name('documents.list');
+        Route::get('download/{document}', 'download')->name('documents.download');
+        Route::post('save/{id?}', 'save')->name('documents.save');
+        Route::delete('delete/{document}', 'delete')->name('documents.delete');
+    });
     Route::get('users', [UserController::class, 'index'])->name('users.index');
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Helpers\MenuHelper;
 use App\Models\Category;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
@@ -28,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
         View::share('g_categories', Category::getGlobalCategories());
+        View::share('g_menuHelper', new MenuHelper());
     }
 }

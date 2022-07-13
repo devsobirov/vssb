@@ -18,6 +18,13 @@ class MenuHelper
         'muassasalar' => ''
     ];
 
+    public const DOCUMENT_CATEGORIES = [
+        '1' => 'buyruqlar',
+        '2' => 'vss buyruqlari',
+        '3' => 'boshqarma buyruqlari',
+        '4' => 'boshqa hujjatlar'
+    ];
+
     public static function categorySections() : array
     {
         return self::CATEGORY_SECTIONS;
@@ -26,5 +33,19 @@ class MenuHelper
     public static function pageSections() : array
     {
         return self::PAGE_SECTIONS;
+    }
+
+    public static function docCategories() : array
+    {
+        return self::DOCUMENT_CATEGORIES;
+    }
+
+    public function getDocumentCategory($id): string
+    {
+        if (!empty($category = self::DOCUMENT_CATEGORIES[$id]))
+        {
+            return strtoupper($category);
+        }
+        return 'Not found';
     }
 }
