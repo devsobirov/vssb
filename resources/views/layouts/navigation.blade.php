@@ -9,6 +9,16 @@
             <span class="text">{{ __('Bosh panel') }}</span>
         </a>
     </li>
+    <li class="nav-item @if(request()->routeIs('applications.*')) active @endif">
+        <a href="{{ route('applications.index') }}">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" style="height: 22px; width: 22px;" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                </svg>
+            </span>
+            <span class="text">{{ __('Murojatlar') }}</span>
+        </a>
+    </li>
     <li class="nav-item nav-item-has-children @if(request()->routeIs('posts.*')) active @endif">
         <a class="collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#blog"
            aria-controls="blog" aria-expanded="true" aria-label="Toggle navigation">
@@ -77,17 +87,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
             </span>
-            <span class="text">{{ __('Users') }}</span>
-        </a>
-    </li>
-    <li class="nav-item @if(request()->routeIs('summernote')) active @endif">
-        <a href="{{ route('summernote') }}">
-             <span class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-type" viewBox="0 0 16 16">
-                  <path d="m2.244 13.081.943-2.803H6.66l.944 2.803H8.86L5.54 3.75H4.322L1 13.081h1.244zm2.7-7.923L6.34 9.314H3.51l1.4-4.156h.034zm9.146 7.027h.035v.896h1.128V8.125c0-1.51-1.114-2.345-2.646-2.345-1.736 0-2.59.916-2.666 2.174h1.108c.068-.718.595-1.19 1.517-1.19.971 0 1.518.52 1.518 1.464v.731H12.19c-1.647.007-2.522.8-2.522 2.058 0 1.319.957 2.18 2.345 2.18 1.06 0 1.716-.43 2.078-1.011zm-1.763.035c-.752 0-1.456-.397-1.456-1.244 0-.65.424-1.115 1.408-1.115h1.805v.834c0 .896-.752 1.525-1.757 1.525z"/>
-                </svg>
-            </span>
-            <span class="text">{{ __('Summernote') }}</span>
+            <span class="text">{{ __('Foydalanuvchilar') }}</span>
         </a>
     </li>
     <li class="nav-item">
@@ -97,7 +97,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                 </svg>
             </span>
-            <span class="text">{{ __('Logout') }}</span>
+            <span class="text">{{ __('Chiqish') }}</span>
         </a>
     </li>
 </ul>

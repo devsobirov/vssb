@@ -44,7 +44,7 @@
                                 <td>
                                     <b>{{ $item->name }}</b>
                                     @if($item->email)<br> Email: {{$item->email}} @endif
-                                    @if($item->phone)<br> Tel: {{$item->email}} @endif
+                                    @if($item->phone)<br> Tel: {{$item->phone}} @endif
                                 </td>
                                 <td>
                                     <div style="width: 100px;" class="shadow-sm p-2"><img src="{{ asset($item->image_path()) }}" class="d-block w-100"></div>

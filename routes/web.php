@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ApplicationController;
 use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\Admin\PersonController;
 use App\Http\Controllers\PageController;
@@ -67,11 +68,14 @@ Route::prefix('c-panel')->middleware('auth')->group(function () {
         Route::post('save/{id?}', 'save')->name('documents.save');
         Route::delete('delete/{document}', 'delete')->name('documents.delete');
     });
+
+    Route::resource('applications', ApplicationController::class)
+        ->only(['index', 'show', 'update'])->names('applications');
+
     Route::get('users', [UserController::class, 'index'])->name('users.index');
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
 
-    Route::view('summernote', 'vendor.summernote.example' )->name('summernote');
 });
 
 // Technical Routes

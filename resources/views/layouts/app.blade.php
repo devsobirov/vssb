@@ -14,10 +14,11 @@
 <body>
 <!-- ======== sidebar-nav start =========== -->
 <aside class="sidebar-nav-wrapper">
-    <div class="navbar-logo">
-        <a href="{{ route('home') }}">
-            <img src="{{ asset('images/logo/logo.svg') }}" alt="logo"/>
+    <div class="navbar-logo d-flex align-items-center justify-content-start">
+        <a href="{{ route('home') }}" class="pe-2">
+            <img style="width: 40px; height: 40px;" src="{{ asset('images/logo/logo.svg') }}" alt="logo"/>
         </a>
+        <h5>Xorazm VSSB</h5>
     </div>
     <nav class="sidebar-nav">
         @include('layouts.navigation')
@@ -50,13 +51,13 @@
                 <div class="col-md-6 order-last order-md-first">
                     <div class="copyright text-md-start">
                         <p class="text-sm">
-                            Designed and Developed by
+                            Developed by
                             <a
-                                    href="https://plainadmin.com"
+                                    href="https://breezesoft.uz"
                                     rel="nofollow"
                                     target="_blank"
                             >
-                                PlainAdmin
+                                Breezesoft
                             </a>
                         </p>
                     </div>

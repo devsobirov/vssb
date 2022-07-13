@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="input-style-1">
-                                <label for="name">{{ __('Name') }}</label>
+                                <label for="name">{{ __('Ism Familiya') }}</label>
                                 <input type="text" @error('name') class="form-control is-invalid" @enderror name="name"
                                        id="name" placeholder="{{ __('Name') }}"
                                        value="{{ old('name', auth()->user()->name) }}" required>
@@ -65,10 +65,10 @@
                         <!-- end col -->
                         <div class="col-12">
                             <div class="input-style-1">
-                                <label for="password">{{ __('New password') }}</label>
+                                <label for="password">{{ __('Yangi parol') }}</label>
                                 <input type="password" @error('password') class="form-control is-invalid"
-                                       @enderror name="password" id="password" placeholder="{{ __('New password') }}"
-                                       required>
+                                       @enderror name="password" id="password" placeholder="{{ __('Yangi parol') }}"
+                                       >
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -79,17 +79,17 @@
                         <!-- end col -->
                         <div class="col-12">
                             <div class="input-style-1">
-                                <label for="password_confirmation">{{ __('New password confirmation') }}</label>
+                                <label for="password_confirmation">{{ __('Yangi parolni tasdiqlash') }}</label>
                                 <input type="password" @error('password') class="form-control is-invalid"
                                        @enderror name="password_confirmation" id="password_confirmation"
-                                       placeholder="{{ __('New password confirmation') }}" required>
+                                       placeholder="{{ __('Parolni qayta kiriting') }}">
                             </div>
                         </div>
                         <!-- end col -->
                         <div class="col-12">
                             <div class="button-group d-flex justify-content-center flex-wrap">
                                 <button type="submit" class="main-btn primary-btn btn-hover w-100 text-center">
-                                    {{ __('Submit') }}
+                                    {{ __('Saqlash') }}
                                 </button>
                             </div>
                         </div>

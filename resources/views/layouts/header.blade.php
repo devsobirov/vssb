@@ -23,7 +23,7 @@
                             <li>
                                 <a href="#0">
                                     <div class="content">
-                                        <p>No new notifications</p>
+                                        <p>Yangi xabarlar yo'q</p>
                                     </div>
                                 </a>
                             </li>
@@ -49,12 +49,12 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
                             <li>
-                                <a href="{{ route('profile.show') }}"> <i class="lni lni-user"></i> {{ __('My profile') }}</a>
+                                <a href="{{ route('profile.show') }}"> <i class="lni lni-user"></i> {{ __('Profilim') }}</a>
                             </li>
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"> <i class="lni lni-exit"></i> {{ __('Logout') }}</a>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"> <i class="lni lni-exit"></i> {{ __('Chiqish') }}</a>
                                 </form>
                             </li>
                         </ul>
