@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\ApplicationController;
 use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\Admin\PersonController;
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\Admin\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\UserController;
