@@ -13,7 +13,6 @@ class MenuHelper
 
     public const PAGE_SECTIONS = [
         'boshqarma' => '',
-        'loyihalar' => '',
         'korruptsiya' => '',
         'muassasalar' => ''
     ];
