@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
@@ -28,5 +29,10 @@ class Page extends Model
             return self::findOrFail($id);
         }
         return new Page();
+    }
+
+    public static function getGlobalPages(): Collection
+    {
+        return self::select(['id', 'title', 'location'])->get();
     }
 }

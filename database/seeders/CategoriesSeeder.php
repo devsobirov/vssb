@@ -25,7 +25,7 @@ class CategoriesSeeder extends Seeder
             // Yangiliklar
             [
                 'name' => json_encode([
-                    'uz' => 'Янгиликлар',
+                    'uz' => 'Yangiliklar',
                     'ru' => 'Новости'
                 ]),
                 'slug' => 'yangiliklar',

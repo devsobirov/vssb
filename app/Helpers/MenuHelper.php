@@ -13,9 +13,10 @@ class MenuHelper
     ];
 
     public const PAGE_SECTIONS = [
-        'boshqarma' => '',
-        'korruptsiya' => '',
-        'muassasalar' => ''
+        'boshqarma' => 'boshqarma',
+        'korruptsiya' => 'korruptsiya',
+        'muassasalar' => 'muassasalar',
+        'loyihalar' => 'loyihalar'
     ];
 
     public const DOCUMENT_CATEGORIES = [
