@@ -1,0 +1,119 @@
+@media screen and (max-width: 1140px) {
+  .container {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 960px) {
+  header .topinfo {
+    flex-direction: column;
+  }
+  nav {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0px;
+  }
+  nav .container {
+    width: 100% !important;
+  }
+  nav .main-menu {
+    display: none !important;
+  }
+  nav .main-menu:not(.mob) {
+    flex-direction: column;
+    background-color: #023e8a !important;
+    padding: 0 !important;
+  }
+  nav .main-menu:not(.mob) > li {
+    display: block;
+    border-bottom: 1px solid #fefefe;
+  }
+  nav .main-menu:not(.mob) > li::after {
+    content: none !important;
+  }
+  nav .main-menu:not(.mob) > li:hover > ul {
+    display: none;
+  }
+  nav .main-menu:not(.mob) > li > a {
+    padding: 10px;
+    color: #fff;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+  nav .main-menu:not(.mob) > li > ul {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fefefe;
+  }
+  nav .main-menu:not(.mob) > li > ul > li a {
+    color: #023e8a;
+  }
+  nav .main-menu.mob {
+    display: flex !important;
+  }
+  nav .main-menu.mob li a {
+    height: 50px !important;
+  }
+  .offer .offer-inner > li:first-child h1 {
+    font-size: 1.5rem !important;
+  }
+  .offer .offer-inner > li:nth-child(2) ul {
+    grid-gap: 10px !important;
+    width: 95% !important;
+  }
+  .offer .offer-inner > li:nth-child(2) ul li a {
+    font-size: 0.9rem !important;
+  }
+  main section > h1 {
+    font-size: 1.2rem !important;
+    text-align: left !important;
+  }
+  main #infoblock {
+    display: block !important;
+  }
+  main #news .news, main .nw .news {
+    grid-template-columns: 1fr !important;
+  }
+  main #news .news li:nth-child(2) > div, main .nw .news li:nth-child(2) > div {
+    border-top: 1px dashed #03045e !important;
+  }
+  main #news .news li:nth-child(odd), main .nw .news li:nth-child(odd) {
+    border-right: none !important;
+  }
+  .list {
+    grid-template-columns: 1fr !important;
+    grid-gap: 10px !important;
+  }
+  footer .f-inner {
+    flex-direction: column;
+  }
+  .parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .parent .w-50 {
+    width: 100% !important;
+  }
+}
+@media print {
+  @page {
+    size: auto;
+    padding: 10px;
+    margin: 0;
+  }
+  .np {
+    display: none !important;
+  }
+  .container {
+    width: 98%;
+  }
+  body > *:not(main) {
+    display: none;
+  }
+  .page {
+    box-shadow: none !important;
+  }
+}/*# sourceMappingURL=media.css.map */

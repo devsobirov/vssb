@@ -19,7 +19,7 @@ $localizationGroupData = [
 
 // Public (Web) routes
 Route::group($localizationGroupData, function() {
-    Route::view('/', 'welcome');
+    Route::view('/', 'web');
 });
 
 Auth::routes();
