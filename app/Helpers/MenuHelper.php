@@ -6,9 +6,10 @@ namespace App\Helpers;
 class MenuHelper
 {
     public const CATEGORY_SECTIONS = [
-        'yangiliklar' => '',
-        'loyihalar' => '',
-        'boshqarma' => ''
+        'yangiliklar' => 'yangiliklar',
+        'loyihalar' => 'loyihalar',
+        'boshqarma' => 'boshqarma',
+        'korruptsiya' => 'korruptsiya',
     ];
 
     public const PAGE_SECTIONS = [
